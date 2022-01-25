@@ -64,7 +64,17 @@
                             <span class="float-right my-auto mr-auto">
                                 <i class="fas fa-arrow-circle-down text-white"></i>
                                 <span class="text-white op-7"> 
-                                    {{round((\App\Models\invoices::where('value_status',2)->count() / \App\Models\invoices::count()) * 100,2)}}%
+                                    @php
+                                    $count_all= \App\Models\invoices::count();
+                                    $count_invoices2 = \App\Models\invoices::where('value_status', 2)->count();
+                                    if($count_invoices2 == 0){
+                                       echo $count_invoices2 = 0;
+                                    }
+                                    else{
+                                       echo round($count_invoices2 = $count_invoices2 / $count_all *100,2);
+                                    }
+                                    @endphp
+                                    {{-- {{round(( \App\Models\invoices::where('value_status',2)->count() / \App\Models\invoices::count()) * 100,2)}}% --}}
                                 </span>
                             </span>
                         </div>
@@ -92,8 +102,16 @@
                             <span class="float-right my-auto mr-auto">
                                 <i class="fas fa-arrow-circle-up text-white"></i>
                                 <span class="text-white op-7"> 
-                                    {{round((\App\Models\invoices::where('value_status',1)->count() / \App\Models\invoices::count()) * 100,2)}}%
-                                </span>
+                                    @php
+                                        $count_all= \App\Models\invoices::count();
+                                        $count_invoices2 = \App\Models\invoices::where('value_status', 1)->count();
+                                        if($count_invoices2 == 0){
+                                           echo $count_invoices2 = 0;
+                                        }
+                                        else{
+                                           echo round($count_invoices2 = $count_invoices2 / $count_all *100,2);
+                                        }
+                                        @endphp                                </span>
                             </span>
                         </div>
                     </div>
@@ -121,8 +139,16 @@
                             <span class="float-right my-auto mr-auto">
                                 <i class="fas fa-arrow-circle-down text-white"></i>
                                 <span class="text-white op-7">
-                                    {{ round((\App\Models\invoices::where('value_status',3)->count() / \App\Models\invoices::count()) * 100,2)}}%
-                                </span>
+                                    @php
+                                        $count_all= \App\Models\invoices::count();
+                                        $count_invoices2 = \App\Models\invoices::where('value_status', 3)->count();
+                                        if($count_invoices2 == 0){
+                                           echo $count_invoices2 = 0;
+                                        }
+                                        else{
+                                           echo round($count_invoices2 = $count_invoices2 / $count_all *100,2);
+                                        }
+                                        @endphp                                </span>
                             </span>
                         </div>
                     </div>
